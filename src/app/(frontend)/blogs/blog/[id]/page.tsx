@@ -11,9 +11,9 @@ import HorizontalItem from '../../components/HorizontalItem'
 export const revalidate = 500
 
 type PageParams = {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
 async function fetchBlogData(id: string) {
@@ -101,7 +101,8 @@ function RelatedBlogs({ blogs }: { blogs: Blog[] }) {
 }
 
 export default async function Page({ params }: PageParams) {
-  const data = await fetchBlogData(params.id)
+  const { id } = await params
+  const data = await fetchBlogData(id)
 
   if (!data) notFound()
 

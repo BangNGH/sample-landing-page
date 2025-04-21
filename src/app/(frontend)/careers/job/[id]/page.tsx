@@ -4,6 +4,6 @@ type PageParams = {
   }
 }
 
-export default async function Page({ params }: PageParams) {
+export default async function Page() {
   return <></>
 }
