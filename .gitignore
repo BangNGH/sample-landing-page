@@ -17,3 +17,4 @@ public/sitemap*.xml
 
 # Local development
 sample-landing-page.*
+.env*.local
